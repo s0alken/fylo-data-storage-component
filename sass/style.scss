@@ -15,8 +15,6 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    height: fill-available;
-    height: -webkit-fill-available;
 }
 
 body {
@@ -26,8 +24,6 @@ body {
     line-height: 1.6rem;
 
     min-height: 100vh;
-    min-height: fill-available;
-    min-height: -webkit-fill-available;
 
     background: url(../images/bg-desktop.png), $very-dark-blue;
     background-repeat: no-repeat;
