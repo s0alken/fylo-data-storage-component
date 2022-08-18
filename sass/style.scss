@@ -1,3 +1,7 @@
+@import "variables";
+@import "animations";
+@import "mixins";
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 *,
@@ -14,6 +18,233 @@ html {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+
     min-height: 100vh;
+
+    background: url(../images/bg-desktop.png), $very-dark-blue;
+    background-repeat: no-repeat;
+
+    background-position: bottom;
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $breakpoint) {
+        background-image: url(../images/bg-mobile.png);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.container {
+    flex: 0 1 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin: 2.4rem;
+    margin-bottom: 4.6rem;
+
+    position: relative;
+
+    >* {
+        display: flex;
+        flex-direction: column;
+        background-color: $dark-blue;
+        box-shadow: 0 7.5rem 10rem -3rem hsla(0, 0%, 0%, 0.248);
+        border-radius: 1rem;
+    }
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 1 92rem;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 3rem;
+    }
+}
+
+.menu {
+    border-top-right-radius: 10rem;
+    padding: 4rem 4.1rem;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 1 35rem;
+    }
+
+    &__logo {
+        margin-bottom: 3rem;
+    }
+
+    &__options {
+        display: flex;
+        gap: 1.6rem;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        width: 4.8rem;
+        height: 4.8rem;
+        background-color: $very-dark-blue;
+        border-radius: 1rem;
+        transition: background-color .2s;
+
+        @include hover-support {
+            &:hover {
+                cursor: pointer;
+            background-color: $very-dark-blue-hover;
+            }
+        }
+    }
+}
+
+.overview {
+    padding: 3.2rem;
+    padding-bottom: 5.2rem;
+
+    margin-bottom: 3.6rem;
+
+    color: $pale-blue;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 1 54rem;
+        padding: 4rem;
+        margin-bottom: 0;
+    }
+
+    &__history {
+        text-align: center;
+        letter-spacing: .01rem;
+
+        margin-bottom: 1.6rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            text-align: start;
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__storage {
+        align-self: stretch;
+    }
+
+    &__bar {
+        background-color: transparentize($very-dark-blue, .5);
+        border-radius: 1rem;
+        height: 2rem;
+        padding: .3rem;
+        margin-bottom: 1rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            margin-bottom: .8rem;
+        }
+
+        &-wrapper {
+            width: 74.51%;
+            height: 100%;
+        }
+
+        &-fill {
+            width: 100%;
+            height: 100%;
+            padding: .2rem;
+
+            background-image: $gradient;
+            border-radius: .8rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            animation: fill .65s ease-in-out;
+
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 1rem;
+                height: 1rem;
+                position: absolute;
+                background-color: $white;
+                right: .2rem;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__labels {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+
+    &__tooltip {
+        align-self: center;
+        background-color: $white;
+        box-shadow: 0 7.5rem 10rem -3rem hsla(0, 0%, 0%, 0.248);
+        border-radius: 1rem;
+        padding: 1.6rem 2.4rem;
+
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        letter-spacing: .1rem;
+
+        text-transform: uppercase;
+
+        color: transparentize($very-dark-blue, .5);
+
+        display: flex;
+        align-items: center;
+        gap: .9rem;
+
+        position: absolute;
+        bottom: 0;
+
+        @media only screen and (min-width: $breakpoint) {
+            bottom: auto;
+            top: 0;
+            right: 4rem;
+            border-bottom-right-radius: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: .2rem;
+                right: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-color: $white;
+                transform: translateY(100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+            }
+        }
+
+        &__text {
+            margin-top: .5rem;
+        }
+
+        &__number {
+            font-size: 4rem;
+            line-height: 4rem;
+            letter-spacing: .21px;
+
+            color: $very-dark-blue;
+        }
+    }
 }
