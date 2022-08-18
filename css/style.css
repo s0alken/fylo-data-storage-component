@@ -18,6 +18,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  height: fill-available;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -26,9 +28,8 @@ body {
   font-size: 1.4rem;
   line-height: 1.6rem;
   min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
   min-height: fill-available;
+  min-height: -webkit-fill-available;
   background: url(../images/bg-desktop.png), hsl(229deg, 57%, 11%);
   background-repeat: no-repeat;
   background-position: bottom;
