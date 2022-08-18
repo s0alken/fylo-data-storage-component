@@ -25,6 +25,11 @@ body {
 
     min-height: 100vh;
 
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
     background: url(../images/bg-desktop.png), $very-dark-blue;
     background-repeat: no-repeat;
 
