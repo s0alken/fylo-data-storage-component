@@ -26,10 +26,9 @@ body {
   font-size: 1.4rem;
   line-height: 1.6rem;
   min-height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
   background: url(../images/bg-desktop.png), hsl(229deg, 57%, 11%);
   background-repeat: no-repeat;
   background-position: bottom;
