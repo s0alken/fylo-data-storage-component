@@ -100,7 +100,7 @@ body {
         @include hover-support {
             &:hover {
                 cursor: pointer;
-            background-color: $very-dark-blue-hover;
+                background-color: $very-dark-blue-hover;
             }
         }
     }
@@ -242,7 +242,7 @@ body {
         &__number {
             font-size: 4rem;
             line-height: 4rem;
-            letter-spacing: .21px;
+            letter-spacing: .021rem;
 
             color: $very-dark-blue;
         }
